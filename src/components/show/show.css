@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+#movieInfo {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    background-color: rgba(101, 14, 105, 0.74);
+}
+
+#moviePoster {
+    max-width: 300px;
+}
+
+#movieData {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 14px 0 0 0;
+}
+
+#titleHolder {
+    width: 70%;
+    background-color: rgba(101, 14, 105, 0.74);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0) );
+}
+
+#movieTitle {
+    width: 70%;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    margin: 0 0 0 10px;
+    
+}
+
+#plot {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: bold;
+    
+}
+
+#posterNRatings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0 0 15px;
+}
+
+#userRating {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+#imdbRating {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    background-image: linear-gradient(to right, rgba(101, 14, 105, 0), #00000086, rgba(101, 14, 105, 0) );
+}
+
+#genreDisplay {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to right, rgba(101, 14, 105, 0), #00000086,  #00000086, rgba(101, 14, 105, 0) );
+}
+
+.genreType {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 5px 25px 5px;
+}
+
+#rated {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    font-weight: bold;
+    margin: 0 0 0 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0) );
+
+}
+
+#ratedReason {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-weight: bold;
+    margin: 0 0 25px 0;
+}
+
+.topImage {
+    height: 125px;
+    width: 125px;
+    border-radius: 100px;
+    border: 3px solid rgba(101, 14, 105, 0.74);
+}
+
+.topImage:hover {
+    border: 3px solid rgb(168, 168, 168);
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.topName{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    font-size: 15px;
+}
+
+#actorImages2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 250px;
+    width: 70%;
+    margin: 0 0 50px 0;
+}
+
+#fullInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.topActor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trailer {
+    border: none;
+}

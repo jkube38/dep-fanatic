@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+
+#selectionHolder {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(101, 14, 105, 0.74);
+    
+}
+
+.queryItem {
+    display: flex;
+    width: 93%;
+    background-color: #00000086;
+    margin: 15px 0 15px 0;
+}
+
+.resultsInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 20px;
+    max-width: 300px;
+}
+
+.poster {
+    max-width: 300px;
+    margin: 30px 20px 30px 0;
+}
+
+.poster:hover{
+    cursor: pointer;
+}
+
+.title2 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: left;
+    background-image: linear-gradient(to right, rgba(101, 14, 105, 0.74), rgba(0, 0, 0, 0) );
+
+}
+
+.year {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+
+}
+
+.starring1 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.starring2 {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.starring {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+#searchResults {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    margin: 10px 0 0 0;
+    background-image: linear-gradient(to right, rgba(101, 14, 105, 0), #00000086, rgba(101, 14, 105, 0) );
+}
+
+
