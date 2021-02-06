@@ -16,6 +16,8 @@
     align-items: center;
     justify-content: center;
     width: 250px;
+    height: 90%;
+    margin: 0 0 0 0;
 }
 
 #headLogo {
@@ -49,5 +51,6 @@ a:link {
 
 #kubeTechLogo {
     height: 90%;
+
 }
 

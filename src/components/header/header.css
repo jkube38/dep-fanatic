@@ -16,6 +16,8 @@ header {
   #fanLogo {
     height: 90%;
     margin: 0 20px 0 50px;
+    text-decoration: none !important;
+    vertical-align: top;
   }
   
   #searchBB {
@@ -43,10 +45,13 @@ header {
     font-size: 28px;
   }
 
-  a:link {
-    height: 90%;
+  .image-link {
     display: flex;
     align-items: center;
-  }
+    height: 90%;
+    border: none !important;
+}
+
+  
 
   

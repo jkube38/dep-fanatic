@@ -68,8 +68,8 @@ function Header () {
     return(
     <Fragment>
     <header>
-      <a href='/'>
-        <img src={purpleLogo} id='fanLogo' alt='Fanatic Logo'/>
+      <a href='/' className='image-link'>
+        <img src={purpleLogo} id='fanLogo' alt='Fanatic Logo' />
       </a>
         <div id='searchBB'>
           <input id='search' type='text' placeholder='search movie, actor' onChange = {handleChange}></input>

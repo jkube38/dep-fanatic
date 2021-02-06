@@ -95,6 +95,7 @@
 .topImage {
     height: 125px;
     width: 125px;
+    object-fit: cover;
     border-radius: 100px;
     border: 3px solid rgba(101, 14, 105, 0.74);
 }
@@ -117,8 +118,8 @@
     align-items: center;
     justify-content: space-between;
     height: 250px;
-    width: 70%;
-    margin: 0 0 50px 0;
+    width: 100%;
+    margin: 0 0 0 0;
 }
 
 #fullInfo {
@@ -136,4 +137,22 @@
 
 #trailer {
     border: none;
+}
+
+#topBilledHeaderHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(101, 14, 105, 0.74), rgba(101, 14, 105, 0.74), rgba(0, 0, 0, 0) );
+    width: 70%;
+    margin: 15px 0 0 0;
+
+}
+
+#topBilledHeader {
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    font-size: 40px;
+    margin: 5px 0 5px 0;
 }

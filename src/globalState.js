@@ -37,7 +37,7 @@ export const actorImages = atom ({
 
 export const notActor = atom ({
     key: 'notActor',
-    default: 'home'
+    default: 'comingSoon'
 })
 
 export const actorBio = atom ({
@@ -55,14 +55,19 @@ export const top100 = atom ({
     default: []
 })
 
-export const upComing = atom ({
-    key: 'upComing',
+export const upComingTitleId = atom ({
+    key: 'upComingTitleId',
     default: []
+})
+
+export const upComingTitleData = atom ({
+    key: 'upComingTitleData',
+    default: false
 })
 
 export const responseData = atom ({
     key: 'responseData',
-    default: []
+    default: false
 })
 
 export const genres = atom ({
@@ -123,4 +128,9 @@ export const trailer = atom ({
 export const trailerId = atom ({
     key: 'trailerId',
     default: ''
+})
+
+export const news = atom ({
+    key: 'news',
+    default: []
 })

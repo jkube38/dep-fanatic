@@ -12,7 +12,7 @@ function Footer () {
                 <h2 id='logoText'>A Jordan Kubista production</h2>
             </div>
             <img id='pageLogo' alt='logo' src={logo} />
-            <a href='/'>
+            <a href='/' className='image-link'>
                 <img id='kubeTechLogo' alt='kube tech logo' src={ kubeTech } />
             </a>
         </div>

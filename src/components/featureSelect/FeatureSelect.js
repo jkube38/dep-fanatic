@@ -26,7 +26,6 @@ function FeatureSelect () {
         let dataList = useResponseData.d
         let queryList = []
         
-        console.log(dataList)
         for(let query = 0; query < dataList.length; query++){
             let poster
             if(dataList[query].i){
@@ -74,7 +73,6 @@ function FeatureSelect () {
     
     const SelectedMovie = e => {
         setuseActorId(e.target.id)
-        console.log(e.target.id, 'id')
         setuseNotActor('getTopSix')
     }
  

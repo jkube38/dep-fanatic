@@ -27,7 +27,8 @@ function Show () {
     const [useResponseData, setuseResponseData] = useRecoilState(responseData)
     const [useTrailer, setuseTrailer] = useRecoilState(trailer)
     const [useActorSelect, setuseActorSelect] = useRecoilState(actorSelect)
-    // const [useTrailerId, setuseTrailerId] = useRecoilState(trailerId)
+    const [useTrailerId, setuseTrailerId] = useRecoilState(trailerId)
+
 
     
 
@@ -61,18 +62,25 @@ function Show () {
             });
         }
 
+        
         let trailerId
-        if(useResponseData.d[useActorId.split('/')[1]].v){
-            trailerId = useResponseData.d[useActorId.split('/')[1]].v[0].id
-        } else {
+        if(useResponseData){
+            if(useResponseData.d[useActorId.split('/')[1]].v[0].id){
+                trailerId = useResponseData.d[useActorId.split('/')[1]].v[0].id
+            } else {
+                trailerId = ''
+            }
+        } else if (useTrailerId.slice(0, 2) === 'vi'){
+            trailerId = useTrailerId
+        }  else {
             trailerId = ''
         }
-        console.log(trailerId)
+        
         if(trailerId !== ''){
         const options = {
             method: 'GET',
             url: 'https://imdb8.p.rapidapi.com/title/get-video-playback',
-            params: {viconst: trailerId, region: 'US'},
+            params: {viconst: useTrailerId, region: 'US'},
             headers: {
               'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
               'x-rapidapi-host': 'imdb8.p.rapidapi.com'
@@ -80,7 +88,6 @@ function Show () {
           };
           
           axios.request(options).then(function (response) {
-              console.log(response.data.resource.encodings[1].playUrl);
               setuseTrailer(response.data.resource.encodings[1].playUrl)
           }).catch(function (error) {
               console.error(error);
@@ -106,7 +113,6 @@ function Show () {
     
     //Display 6 top billed actors
     const DisplayTopBilled = () => {
-        console.log('hello')
         let actorDisplay = []
         
         for(let actor = 0; actor < useRunTopSix.length; actor++){
@@ -123,14 +129,8 @@ function Show () {
         }
         
         setuseTopDisplayReady(true)
-        console.log(actorDisplay,'actor display')
         return actorDisplay
-    }
-
-
-    const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-      }  
+    }  
     
     
     const GetActor = e => {
@@ -195,8 +195,12 @@ function Show () {
                     <p id='ratedReason'>{useRatedBecause}</p>
                 </div>
             </div>
+            <div id='topBilledHeaderHolder'>
+                <h2 id='topBilledHeader'>Top Billed Cast</h2>
+           
             <div id='actorImages2'>
                 <DisplayTopBilled />
+            </div>
             </div>
         </div>
     )
