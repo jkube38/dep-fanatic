@@ -18,10 +18,12 @@ function FeatureSelect () {
     const [useTrailer, setuseTrailer] = useRecoilState(trailer)
 
 
-    setuseTrailer('')
+    
 
     
     const QueryCards = () => {
+
+        setuseTrailer('')
 
         let dataList = useResponseData.d
         let queryList = []

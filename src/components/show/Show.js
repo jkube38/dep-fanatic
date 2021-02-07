@@ -28,9 +28,7 @@ function Show () {
     const [useTrailer, setuseTrailer] = useRecoilState(trailer)
     const [useActorSelect, setuseActorSelect] = useRecoilState(actorSelect)
     const [useTrailerId, setuseTrailerId] = useRecoilState(trailerId)
-
-
-    
+  
 
     useEffect(() => {
     const getMovieInfo = async() => {
@@ -48,6 +46,7 @@ function Show () {
             };
       
             axios.request(options).then(function (response) {
+                console.log(response.data)
                 setuseImage(response.data.title.image.url)
                 setuseGenres(response.data.genres)
                 setuseRating(response.data.ratings.rating)
@@ -65,7 +64,7 @@ function Show () {
         
         let trailerId
         if(useResponseData){
-            if(useResponseData.d[useActorId.split('/')[1]].v[0].id){
+            if(useResponseData.d[useActorId.split('/')[1]].v){
                 trailerId = useResponseData.d[useActorId.split('/')[1]].v[0].id
             } else {
                 trailerId = ''
@@ -80,7 +79,7 @@ function Show () {
         const options = {
             method: 'GET',
             url: 'https://imdb8.p.rapidapi.com/title/get-video-playback',
-            params: {viconst: useTrailerId, region: 'US'},
+            params: {viconst: trailerId, region: 'US'},
             headers: {
               'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
               'x-rapidapi-host': 'imdb8.p.rapidapi.com'
@@ -89,6 +88,7 @@ function Show () {
           
           axios.request(options).then(function (response) {
               setuseTrailer(response.data.resource.encodings[1].playUrl)
+              setuseTrailerId('')
           }).catch(function (error) {
               console.error(error);
           });
