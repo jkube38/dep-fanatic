@@ -2,7 +2,7 @@
 
 
 #selectionHolder {
-    width: 70%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,9 @@
 
 .queryItem {
     display: flex;
-    width: 93%;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
     background-color: #00000086;
     margin: 15px 0 15px 0;
 }

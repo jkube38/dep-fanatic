@@ -28,7 +28,7 @@ function App() {
           url: 'https://imdb8.p.rapidapi.com/title/get-news',
           params: {tconst: 'tt0944947', limit: '25'},
           headers: {
-            'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+            'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
             'x-rapidapi-host': 'imdb8.p.rapidapi.com'
           }
         };
@@ -46,7 +46,7 @@ function App() {
           url: 'https://imdb8.p.rapidapi.com/title/get-coming-soon-movies',
           params: {homeCountry: 'US', purchaseCountry: 'US', currentCountry: 'US'},
           headers: {
-            'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+            'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
             'x-rapidapi-host': 'imdb8.p.rapidapi.com'
           }
         };
@@ -59,8 +59,6 @@ function App() {
         
     }, [])
 
-    
-    console.log(pageView)
     const ActorOrShow = () => {
       if (pageView === 'home' || pageView === ''){
         return <Home />

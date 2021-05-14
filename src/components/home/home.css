@@ -3,7 +3,7 @@
 #homeHolder {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     width: 70%;
     background-color: rgba(101, 14, 105, 0.74);
 }
@@ -15,11 +15,6 @@
     height: 125px;
     width: 100%;
     margin: 30px 0 0 0;
-}
-#logo {
-    height: 90%;
-    position: relative; left: 85px;
-    
 }
 
 #newsHolder {
@@ -72,7 +67,7 @@
     margin: 0 0 0 20px;
 }
 
-.body {
+.bodyText {
     width: 95%;
     color: rgb(168, 168, 168);
     font-family: 'Montserrat', sans-serif;
@@ -94,44 +89,70 @@ a:visited {
 
 #newsHeaderHolder {
     width: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0) );
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0) );
     margin: 50px 0 0 0;
     overflow: hidden;
-    
-}
-
-@keyframes slidingHeader {
-    from {position: relative; left: 545px;}
-    to {position: relative; left: -150px;}
+    text-align: center;
 }
 
 #topNews{
     font-family: 'Montserrat', sans-serif;
     color: rgb(168, 168, 168);
     margin: 2px 0 2px 10px;
-    
-    animation-name: slidingHeader;
-    animation-duration: 15s;
-    animation-iteration-count: 3;
+
 }
 
 #newsComponents {
-    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
 }
 
 #newsAndUpcoming {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
+}
+
+#justNews {
+    width: 40%;
+}
+
+#welcomeTo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+#whiteLogo {
+    width: 75%;
+    margin: 50px 0 0 0;
+    position: relative; left: 50px;
+}
+
+#welcomeText {
+    width: 75%;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#welcomeText em {
+    color: rgba(208, 152, 211, 0.74);
 }
 
 #comingSoonHolder {
     display: flex;
-    flex-direction: column;
-    height: 500px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    align-items: flex-end;
     width: 100%;
-    margin: 5px 0 0 0;
+    height: 500px;
+    background-color: black;
+    overflow: scroll;
+    margin: 0 0 25px 0;
+    overflow-y: hidden;
 }
 
 #comingSoonHolder::-webkit-scrollbar-track {
@@ -142,23 +163,23 @@ a:visited {
     border-radius: 10px;
 }
 
-.upcomingPoster {
-    width: 95%;
-    cursor: pointer;
-}
-
 .singleUpcoming {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    margin: 0 0 25px 0;
-    background-color: black;
+    height: 90%;
+    margin: 0 15px 0 0;
+}
+
+.upcomingPoster {
+   max-height: 70%;
+   cursor: pointer;
 }
 
 .upcomingTitle {
     font-family: 'Montserrat', sans-serif;
     color: rgb(168, 168, 168);
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(101, 14, 105, 0.74), rgba(0, 0, 0, 0) );
     text-align: center;
 }
 
@@ -170,28 +191,20 @@ a:visited {
 #upcomingComponents {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 90%;
 }
 
 #upcomingHeaderHolder {
     width: 100%;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0) );
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.938), rgba(0, 0, 0, 0) );
     margin: 50px 0 0 0;
     overflow: hidden;
-}
-
-@keyframes slidingHeader2 {
-    from {position: relative; left: 270px;}
-    to {position: relative; left: -200px;}
+    text-align: center;
 }
 
 #upcomingHeader {
     font-family: 'Montserrat', sans-serif;
     color: rgb(168, 168, 168);
-    margin: 2px 0 2px 10px;
-
-    animation-name: slidingHeader2;
-    animation-duration: 15s;
-    animation-iteration-count: 3;
+    margin: 2px 0 2px 0;
 }
 

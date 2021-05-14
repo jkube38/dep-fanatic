@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useRecoilState } from 'recoil'
-import { image, displayName, actorId, genres, rating, plot, rated, topBilled, ratedBecause, runShow,
+import { image, displayName, actorId, genres, rating, plot, rated, topBilled, ratedBecause, runShow, actorImages, actorBio, actorFilmography,
          runTopSix, topDisplayReady, topSix, notActor, searchName, knownFor, responseData, trailer, trailerId, actorSelect} from '../../globalState.js'
 import './show.css'
 import axios from 'axios'
@@ -28,6 +28,9 @@ function Show () {
     const [useTrailer, setuseTrailer] = useRecoilState(trailer)
     const [useActorSelect, setuseActorSelect] = useRecoilState(actorSelect)
     const [useTrailerId, setuseTrailerId] = useRecoilState(trailerId)
+    const [useActorFilmography, setuseActorFilmography] = useRecoilState(actorFilmography)
+    const [useActorBio, setuseActorBio] = useRecoilState(actorBio)
+    const [useActorImages, setuseActorImages] = useRecoilState(actorImages)
   
 
     useEffect(() => {
@@ -40,7 +43,7 @@ function Show () {
                 url: 'https://imdb8.p.rapidapi.com/title/get-overview-details',
                 params: {tconst: useActorId.split('/')[0], currentCountry: 'US'},
                 headers: {
-                'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+                'x-rapidapi-key': "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
                 'x-rapidapi-host': 'imdb8.p.rapidapi.com'
                 }
             };
@@ -68,11 +71,13 @@ function Show () {
                 trailerId = useResponseData.d[useActorId.split('/')[1]].v[0].id
             } else {
                 trailerId = ''
+                setuseTrailer('No Trailer Available')
             }
         } else if (useTrailerId.slice(0, 2) === 'vi'){
             trailerId = useTrailerId
         }  else {
             trailerId = ''
+            setuseTrailer('No Trailer Available')
         }
         
         if(trailerId !== ''){
@@ -81,7 +86,7 @@ function Show () {
             url: 'https://imdb8.p.rapidapi.com/title/get-video-playback',
             params: {viconst: trailerId, region: 'US'},
             headers: {
-              'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+              'x-rapidapi-key': "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
               'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
           };
@@ -135,6 +140,10 @@ function Show () {
     
     const GetActor = e => {
 
+        setuseActorImages([])
+        setuseActorImages('')
+        setuseActorFilmography([])
+
         let actorsName = e.target.id
     
         const options = {
@@ -142,7 +151,7 @@ function Show () {
             url: 'https://imdb8.p.rapidapi.com/title/auto-complete',
             params: {q: actorsName},
             headers: {
-             'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+             'x-rapidapi-key': "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
              'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
         };
@@ -174,6 +183,14 @@ function Show () {
               
     }
 
+    const TrailerChoice = () => {
+        if(useTrailer === 'No Trailer Available'){
+           return <h2 id='noTrailer'>Sorry no trailer was available</h2>
+        } else {
+           return <Iframe id='trailer' url={ useTrailer } allowFullScreen='true' height='100%' width='100%'/>
+        }
+    }
+
     return(
         <div id='fullInfo'>
             <div id='titleHolder'>
@@ -189,7 +206,7 @@ function Show () {
                     <div id='genreDisplay'>
                         <DisplayGenres />
                     </div>
-                    <Iframe id='trailer' url={ useTrailer } allowFullScreen='true' height='100%' width='100%'/>
+                    <TrailerChoice />
                     <p id='plot'>{usePlot}</p>
                     <h2 id='rated'>Rated {useRated}</h2>
                     <p id='ratedReason'>{useRatedBecause}</p>

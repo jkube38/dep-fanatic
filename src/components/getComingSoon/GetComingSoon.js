@@ -12,6 +12,8 @@ function GetComingSoon () {
     const [useUpComingTitleData, setuseUpComingTitleData] = useRecoilState(upComingTitleData)
     const [useNotActor, setuseNotActor] = useRecoilState(notActor)
 
+    document.title = 'Loading | FANatic'
+
     let splitIds = []
 
     for(let id = 0; id < useUpComingTitleId.length; id++){
@@ -36,7 +38,7 @@ function GetComingSoon () {
                         url: 'https://imdb8.p.rapidapi.com/title/get-top-stripe',
                         params: {tconst: splitIds[title], currentCountry: 'US', purchaseCountry: 'US'},
                         headers: {
-                          'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+                          'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
                           'x-rapidapi-host': 'imdb8.p.rapidapi.com'
                         }
                       };

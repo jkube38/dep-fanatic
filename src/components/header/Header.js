@@ -17,13 +17,14 @@ function Header () {
     const [useResponseData, setuseResponseData] = useRecoilState(responseData)
 
     // Initial call from user search
-    const fakeImdbSearch = () => {
+    const fakeImdbSearch = (query) => {
+
         const options = {
             method: 'GET',
             url: 'https://imdb8.p.rapidapi.com/title/auto-complete',
-            params: {q: useSearchName},
+            params: {q: query},
             headers: {
-             'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+             'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
              'x-rapidapi-host': 'imdb8.p.rapidapi.com'
             }
         };
@@ -56,13 +57,18 @@ function Header () {
           
         clearSearch()
     }
-  
-    const handleChange = event => {
-      setuseSearchName(event.target.value)
-    }
 
     const clearSearch = () => {
       document.getElementById('search').value = ''
+    }
+
+    const gatherSearchData = () => {
+
+        let searchInput = document.getElementById('search').value
+        setuseSearchName(searchInput)
+
+        fakeImdbSearch(searchInput)
+
     }
     
     return(
@@ -72,8 +78,8 @@ function Header () {
         <img src={purpleLogo} id='fanLogo' alt='Fanatic Logo' />
       </a>
         <div id='searchBB'>
-          <input id='search' type='text' placeholder='search movie, actor' onChange = {handleChange}></input>
-          <button id='searchButton' onClick={fakeImdbSearch}>SEARCH</button>
+            <input id='search' type='text' placeholder='search movie, actor'></input>
+            <button id='searchButton' onClick={gatherSearchData}>SEARCH</button>
         </div>
     </header>
       <h1>SEARCH TV, MOVIES AND ACTORS</h1>

@@ -27,7 +27,7 @@ function TopSix () {
                 url: 'https://imdb8.p.rapidapi.com/title/get-top-cast',
                 params: {tconst: useActorId.split('/')[0]},
                 headers: {
-                  'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+                  'x-rapidapi-key': "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
                   'x-rapidapi-host': 'imdb8.p.rapidapi.com'
                 }
               };
@@ -62,7 +62,7 @@ function TopSix () {
                     url: 'https://imdb8.p.rapidapi.com/actors/get-bio',
                     params: {nconst: characterId},
                     headers: {
-                    'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+                    'x-rapidapi-key': "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
                     'x-rapidapi-host': 'imdb8.p.rapidapi.com'
                     }
                 };

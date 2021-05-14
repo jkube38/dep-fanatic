@@ -17,7 +17,7 @@ function FeatureSelect () {
     const [useTrailerId, setuseTrailerId] = useRecoilState(trailerId)
     const [useTrailer, setuseTrailer] = useRecoilState(trailer)
 
-
+    document.title = 'FANatic Search'
     
 
     

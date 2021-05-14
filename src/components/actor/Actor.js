@@ -34,7 +34,7 @@ function Actor () {
         url: 'https://imdb8.p.rapidapi.com/actors/get-bio',
         params: {nconst: useActorId},
         headers: {
-          'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+          'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
           'x-rapidapi-host': 'imdb8.p.rapidapi.com'
         }
         
@@ -57,7 +57,7 @@ function Actor () {
         url: 'https://imdb8.p.rapidapi.com/actors/get-all-filmography',
         params: {nconst: useActorId},
         headers: {
-          'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+          'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
           'x-rapidapi-host': 'imdb8.p.rapidapi.com'
         }
       };
@@ -80,7 +80,7 @@ function Actor () {
         url: 'https://imdb8.p.rapidapi.com/actors/get-all-images',
         params: {nconst: useActorId},
         headers: {
-          'x-rapidapi-key': '1ddf0a8da3msh877010e622bf74dp10873cjsnd762a292965a',
+          'x-rapidapi-key':  "ee1a65823amsh5fe2d14b7f16274p19c33djsn9fdce1c4db82",
           'x-rapidapi-host': 'imdb8.p.rapidapi.com'
         }
       };
@@ -118,10 +118,17 @@ function Actor () {
                                 <h6 className='title' key={ useActorFilmography[role].title }>{useActorFilmography[role].title}</h6>
                                 <h6 className='role' key={ useActorFilmography[role].characters }>{useActorFilmography[role].characters}</h6>
                                 <img key={ role } className='roleImage' alt= {useActorFilmography[role].characters} src={ useActorFilmography[role].image.url}></img>
+                                <h6 className='titleYear' key={role + 1000}>{useActorFilmography[role].year}</h6>
                                 <h6 className='status' key={ -role - 1 }>{useActorFilmography[role].status}</h6>
                               </div>)
         } else {
-          titleAndRole.push(<div className='character'><h6 className='title'>{useActorFilmography[role].title}</h6><h6 className='role'>{useActorFilmography[role].characters}</h6><img key={ role } className='roleImage' alt= {useActorFilmography[role].characters} src={ noPoster } ></img><h6 className='status'>{useActorFilmography[role].status}</h6></div>)
+          titleAndRole.push(<div className='character'>
+                              <h6 className='title'>{useActorFilmography[role].title}</h6>
+                              <h6 className='role'>{useActorFilmography[role].characters}</h6>
+                              <img key={ role } className='roleImage' alt= {useActorFilmography[role].characters} src={ noPoster } ></img>
+                              <h6 className='titleYear' key={role + 1000}>{useActorFilmography[role].year}</h6>
+                              <h6 className='status'>{useActorFilmography[role].status}</h6>
+                            </div>)
         }
       }
       return titleAndRole

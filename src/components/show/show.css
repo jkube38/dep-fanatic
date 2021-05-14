@@ -156,3 +156,14 @@
     font-size: 40px;
     margin: 5px 0 5px 0;
 }
+
+#noTrailer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(168, 168, 168);
+    height: 300px;
+    background-color: black;
+    margin: 0 0 0 0;
+}

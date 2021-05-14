@@ -13,6 +13,11 @@ header {
     margin: 15px 0 0 0;    
   }
 
+  #searchForm {
+    display: flex;
+    width: 50%;
+  }
+
   #fanLogo {
     height: 90%;
     margin: 0 20px 0 50px;
@@ -22,6 +27,7 @@ header {
   
   #searchBB {
     display: flex;
+    justify-content: flex-end;
     margin: 0 25px 0 20px;
     width: 50%;
   }
